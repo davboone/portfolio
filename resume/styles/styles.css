@@ -1,0 +1,23 @@
+body{
+    border-radius: 5px;
+}
+
+#content{
+    border-radius: 5px;
+}
+
+#header p{
+    text-align: center;
+}
+html{
+    background-color: #7abaff !important;
+}
+p{
+    margin: 0;
+}
+#skills{
+    margin-top: 1rem;
+}
+img{
+    width: 20%;
+}

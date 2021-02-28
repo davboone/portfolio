@@ -1,0 +1,10 @@
+tfoot{
+    text-align: center;
+}
+
+th{
+
+}
+th:last-of-type{
+    border-right: none;
+}

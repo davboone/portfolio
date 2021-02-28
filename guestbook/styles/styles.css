@@ -1,0 +1,58 @@
+/*
+    David Boone
+    1/28/2021
+    Elements for the guestbook
+ */
+
+button{
+    width: 15%;
+}
+body, form, #content{
+    border-radius: 5px;
+}
+
+form, .jumbotron{
+    background-color: #4e555b;
+    color: white;
+}
+
+fieldset{
+    margin: 1rem;
+}
+
+#format{
+    /*display: none;*/
+}
+
+#formatLabel{
+    display: block;
+}
+
+html{
+    background-color: #7abaff;
+
+}
+
+label{
+    padding-bottom: 0.5rem;
+}
+
+#main{
+    background-color: #4e555b;
+    color: white;
+    margin: auto;
+    width: 50%;
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+#otherDiv{
+    display: none;
+}
+
+span{
+    color: red;
+}
+
+

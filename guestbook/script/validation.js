@@ -33,7 +33,8 @@ function validateForm(event)
 
     let howMet = document.getElementById("meet");
     let metError = document.getElementById("metError");
-    let otherBox = document.getElementById("otherDiv");
+    let errorOther = document.getElementById("otherError");
+    let other = document.getElementById("other");
 
     let url = document.getElementById("linkedin");
     let urlError = document.getElementById("urlError");
@@ -131,10 +132,24 @@ function validateForm(event)
         urlErrors = true;
     }
     //how we met validation and making the other element disappear if other isn't selected
-    if(howMet.value !== "none")
+    if(howMet.value !== "none" && howMet.value !== "other")
     {
+        errorOther.style.display = "none";
         metError.style.display = "none";
         howMetErrors = true;
+    }
+    else if(howMet.value === "other")
+    {
+        if(other.value.length === 0)
+        {
+            errorOther.innerText = "Please enter how we met";
+            errorOther.style.display = "block";
+            howMetErrors = false;
+        }
+        else
+        {
+            howMetErrors = true;
+        }
     }
     else
     {
@@ -143,23 +158,6 @@ function validateForm(event)
         howMetErrors = false;
     }
 
-    if(howMet.value === "other")
-    {
-        otherBox.style.display = "block";
-        let other = document.getElementById("other");
-        let errorOther = document.getElementById("otherError");
-        if(other.value.length > 0)
-        {
-            errorOther.innerText = "Please enter how we met";
-            errorOther.style.display = "block";
-            howMetErrors = false;
-        }
-        else
-        {
-            otherBox.style.display = "none";
-            howMetErrors = true;
-        }
-    }
 
     //event.preventDefault();
     if(emailErrors&&howMetErrors&&nameErrors&&urlErrors)

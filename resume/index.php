@@ -1,3 +1,9 @@
+<?php
+session_start();
+require ('../guestbook/log-inCreds.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,7 @@
     require ('/home/dboonegr/connect.php');
     ?>
 </head>
-<body class="container py-3 my-3 bg-dark">
+<body class="container py-3 my-3">
 <?php
 $currentPage= "Resume";
 include ("../guestbook/includes/navbar.php");

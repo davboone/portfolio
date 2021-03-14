@@ -1,22 +1,46 @@
 body{
     border-radius: 5px;
+    background: gainsboro;
 }
 
 #content{
-    border-radius: 5px;
+
+}
+.done{
+    margin-left: 12%;
+}
+.gpa{
+    margin-left: 61.5%;
+}
+hr{
+    margin: 0.5rem 1rem;
+    border: 1px solid black;
 }
 
+h4{
+    color: #4472C4;
+    font-size: 1rem;
+    margin: 0;
+}
 #header p{
     text-align: center;
 }
 html{
-    background-color: #7abaff !important;
+    background-image: url(/305/backgrounds/whiteHexagons.jpg);
 }
 p{
     margin: 0;
 }
+
+.rightAlign{
+    margin-left: 16.1%;
+}
+
 #skills{
     margin-top: 1rem;
+}
+.smallText{
+    font-size: 0.8rem;
 }
 img{
     width: 20%;

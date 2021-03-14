@@ -4,7 +4,9 @@
     Guestbook for storing contacts
 -->
 <?php
-require ('/home/dboonegr/connect.php');
+session_start();
+
+require $_SERVER['HOME'].'/connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,47 +27,47 @@ require ('/home/dboonegr/connect.php');
     $currentPage = "Guestbook";
     include ("includes/navbar.php");
 ?>
-    <div class="jumbotron">
+    <div class="jumbotron bg-light">
         <h1 class="display-4">Welcome, Friend!</h1>
-        <p class="lead">Please fill out the form below to be added to my guestbook. Thanks for stopping by!</p>
+        <p class="lead">Please fill out the form below so I can keep track of how we met and your details. Thanks for stopping by!</p>
         <hr class="">
     </div><!-- jumbotron -->
 
-    <form class="pb-1" id="contact" method="post" action="confirm.php" >
+    <form class="pb-2 bg-light" id="contact" method="post" action="confirm.php" >
         <fieldset  class="form-group border p-2">
                 <legend>Contact Info</legend>
 
             <div class="form-group">
                 <label class="form-check-label" for="fname">First Name</label>
-                <input type="text" id="fname" placeholder="Enter First Name" name="fname" class="form-control">
+                <input type="text" id="fname" placeholder="Joe" name="fname" class="form-control">
                 <span id="fNameError"></span>
             </div><!-- first name -->
 
             <div class="form-group">
                 <label class="form-check-label" for="lname">Last Name</label>
-                <input type="text" id="lname" placeholder="Enter Last Name" name="lname" class="form-control">
+                <input type="text" id="lname" placeholder="Shmoe" name="lname" class="form-control">
                 <span id="lNameError"></span>
             </div><!-- last name-->
 
             <div class="form-group">
                 <label class="form-check-label" for="job">Job Title</label>
-                <input type="text" id="job" placeholder="Enter Job Title" name="job" class="form-control">
+                <input type="text" id="job" placeholder="Supervisor of the World" name="job" class="form-control">
             </div><!-- job title -->
 
             <div class="form-group">
                 <label class="form-check-label" for="company">Company</label>
-                <input type="text" id="company" placeholder="Enter Company" name="company" class="form-control">
+                <input type="text" id="company" placeholder="Skynet" name="company" class="form-control">
             </div><!-- company worked at-->
 
             <div class="form-group">
                 <label class="form-check-label" for="linkedin">LinkedIn URL</label>
-                <input type="text" id="linkedin" placeholder="Enter LinkedIn URL" name="linkedin" class="form-control">
+                <input type="text" id="linkedin" placeholder="http(s)://www.restoftheurl.com" name="linkedin" class="form-control">
                 <span id="urlError"></span>
             </div><!-- linkedin profile url -->
 
             <div class="form-group">
                 <label class="form-check-label" for="email">Email Address</label>
-                <input type="text" id="email" placeholder="Enter Email Address" name="email" class="form-control">
+                <input type="text" id="email" placeholder="johndoe@yahoo.com" name="email" class="form-control">
                 <span id="emailError"></span>
             </div><!-- contact email address -->
 
@@ -76,19 +78,19 @@ require ('/home/dboonegr/connect.php');
 
             <div class="form-group">
                 <label class="form-check-label" for="meet">How did we Meet?</label>
-                <select id="meet" name="met[1]" class="form-control">
+                <select id="meet" name="met" class="form-control">
                     <option value="none">Select an option</option>
-                    <option value="Meetup">Meetup</option>
-                    <option value="jobFair">Job Fair</option>
+                    <option value="Meet Up">Meetup</option>
+                    <option value="Job Fair">Job Fair</option>
                     <option value="other">Other</option>
-                    <option value="notMet">Haven't met yet</option>
+                    <option value="Not Met">Haven't met yet</option>
                 </select>
                 <span id="metError"></span>
             </div><!-- select how we met -->
 
             <div id="otherDiv" class="form-group">
                 <label class="form-check-label" for="other">Other</label>
-                <input type="text" id="other" placeholder="Please specify" name="met[2]" class="form-control">
+                <input type="text" id="other" placeholder="Please specify" name="other" class="form-control">
                 <span id="otherError"></span>
             </div> <!-- fill in if they chose other from how we met -->
 
@@ -99,12 +101,13 @@ require ('/home/dboonegr/connect.php');
 
         </fieldset> <!-- how we met -->
 
-        <fieldset class="form-group border p-2">
+        <fieldset class="form-group border p-1">
             <legend>Mailing list</legend>
 
             <div class="container mb-4 ml-1">
-                <input id="mailing" type="checkbox" class="form-check-input">
-                <label for="mailing">Please add me to your mailing list!</label>
+                <input id="mailing" type="checkbox" class="form-check-input" name="mailing">
+                <label id="emailSelection" for="mailing">Please add me to your mailing list!</label>
+                <p id="emailNotification">(Email Address required if checked)</p>
             </div> <!-- check if they want to be added to mailing list -->
 
 
@@ -127,6 +130,6 @@ require ('/home/dboonegr/connect.php');
         <button id="submit" type="submit" class="btn btn-primary d-block m-auto w-auto">Submit</button> <!-- submit button -->
 
     </form> <!-- closing form tag -->
-    <script src="script/validation.js"></script>
+<!--    <script src="script/validation.js"></script>-->
 </body> <!-- closing body tag-->
 </html>

@@ -1,3 +1,10 @@
+.login{
+    position: absolute;
+    width: 16%;
+    text-align: right;
+    margin-left: 82%;
+}
+
 .navbar{
     border-radius: 5px;
     background-color: #4e555b;
